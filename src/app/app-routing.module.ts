@@ -25,7 +25,11 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
-    children: []
+    children: [
+      { path: 'dashboard', loadChildren: () => import('./tobinco-app/dashboard/dashboard.module').then(m => m.DashboardModule) },
+      { path: 'products', loadChildren: () => import('./tobinco-app/products/products.module').then(m => m.ProductsModule) },
+      { path: 'transactions', loadChildren: () => import('./tobinco-app/transactions/transactions.module').then(m => m.TransactionsModule) },
+    ]
   },
   {
     path: '**',
