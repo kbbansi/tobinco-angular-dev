@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="main-header">
+        <h4>Dashboard</h4>
+    </div>
+</div>
+
+<div class="row dashboard-header">
+    <div class="col-lg-3 col-md-6">
+        <mat-card class="dashboard-product">
+            <mat-card-content>
+                <span>Total Transactions</span>
+                <h2 class="dashboard-total-products">0</h2>
+                <span class="badge text-bg-success">Orders</span> Today
+                <div class="side-box">
+                    <a routerLink="/transactions" class="badge badge-info mr-0">view</a>
+                    <mat-icon class="text-warning">podcasts</mat-icon>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <mat-card class="dashboard-product">
+            <mat-card-content>
+                <span>Completed Sessions</span>
+                <h2 class="dashboard-total-products">0</h2>
+                <span class="badge text-bg-primary">Completed</span> Sessions Today
+                <div class="side-box">
+                    <a routerLink="/transactions" class="badge badge-info mr-0">view</a>
+                    <mat-icon class="text-info">redeem</mat-icon>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <mat-card class="dashboard-product">
+            <mat-card-content>
+                <span>Pending Sessions</span>
+                <h2 class="dashboard-total-products">0</h2>
+                <span class="badge badge-warning">Feedback</span> not Completed
+                <div class="side-box">
+                    <a routerLink="/transactions" class="badge badge-info mr-0">view</a>
+                    <mat-icon class="text-success">signpost</mat-icon>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <mat-card class="dashboard-product">
+            <mat-card-content>
+                <span>On Hold</span>
+                <h2 class="dashboard-total-products">0</h2>
+                <span class="badge text-bg-danger">Stopped</span> by Sales Executive
+                <div class="side-box">
+                    <a routerLink="/transactions" class="badge badge-info mr-0">view</a>
+                    <mat-icon class="text-danger">rocket</mat-icon>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-lg-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-subtitle>TOP DAILY MEDICAL SESSIONS BY MEDICAL REPS</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <apx-chart
+                    [series]="chartOptions.series!"
+                    [chart]="chartOptions.chart!"
+                    [xaxis]="chartOptions.xaxis!"
+                    [title]="chartOptions.subtitle!"></apx-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
