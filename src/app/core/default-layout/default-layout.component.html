@@ -1,4 +1,4 @@
-<mat-toolbar color="accent" class="main-toolbar">
+<mat-toolbar color="primary" class="main-toolbar">
     <mat-toolbar-row>
         <h2>Tobinco Dev</h2>
         <button mat-icon-button (click)="toggleSideNav(sidenav)">
@@ -13,7 +13,7 @@
         <span>
             <img class="img-circle" 
             src="https://utils.mikebergafu.me/quantam/assets/images/avatar-1.png" 
-            style="width:40px;" 
+            style="width:40px; margin-right: 6px;" 
             alt="User Image">
         </span>
         <span>User Name</span>
@@ -47,7 +47,10 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="padded">
-        <router-outlet></router-outlet>
+        <!-- <router-outlet></router-outlet> -->
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
     </mat-sidenav-content>
 
 </mat-sidenav-container>
