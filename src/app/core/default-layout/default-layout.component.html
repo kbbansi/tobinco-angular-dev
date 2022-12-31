@@ -1,2 +1,53 @@
-<p>default-layout works!</p>
-<router-outlet></router-outlet>
+<mat-toolbar color="accent" class="main-toolbar">
+    <mat-toolbar-row>
+        <h2>Tobinco Dev</h2>
+        <button mat-icon-button (click)="toggleSideNav(sidenav)">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span class="menu-button-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+         <mat-icon>share</mat-icon>
+       </button>
+       
+       <button mat-button [matMenuTriggerFor]="menu">
+        <span>
+            <img class="img-circle" 
+            src="https://utils.mikebergafu.me/quantam/assets/images/avatar-1.png" 
+            style="width:40px;" 
+            alt="User Image">
+        </span>
+        <span>User Name</span>
+        <mat-icon>expand_more</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>lock</mat-icon>
+            <span>Lock Screen</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span (click)="logOut()">Log Out</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="full-height" autosize="true">
+    <mat-sidenav mode="side" opened #sidenav>
+        <!-- TODO :: dynamic menu items -->
+        <div mat-menu-item 
+        *ngFor="let item of sideMenu" 
+        [routerLink]="['/', item.route]" 
+        class="with-icon padded"
+        >
+        <!-- <p>{{item.name}}</p> -->
+        <mat-icon [matTooltip]="item.toolTip"> {{item.icon}} </mat-icon>
+        <span [hidden]="collapse">{{item.name}}</span>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="padded">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
