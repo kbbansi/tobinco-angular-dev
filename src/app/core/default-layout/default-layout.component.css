@@ -28,3 +28,8 @@
 .img-circle {
     border-radius: 50%;
 }
+
+.main-toolbar {
+    background: #0c5002;
+    color: #fff;
+}
